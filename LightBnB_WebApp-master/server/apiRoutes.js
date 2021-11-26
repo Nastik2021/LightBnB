@@ -1,7 +1,7 @@
 module.exports = function(router, database) {
 
   router.get('/properties', (req, res) => {
-    database.getAllProperties(req.query, 20)
+    database.getAllProperties(req.query) /////removed the harcoded 20 so the querty getAllProperties works correctly, not sure if thats okay
     .then(properties => res.send({properties}))
     .catch(e => {
       console.error(e);
